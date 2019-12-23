@@ -1,0 +1,3 @@
+spring:
+  application: 
+    name: springcloud2-log4j
