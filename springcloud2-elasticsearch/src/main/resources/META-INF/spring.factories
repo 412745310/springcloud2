@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.chelsea.springcloud2.elasticsearch.config.ComponentAutoConfigure
