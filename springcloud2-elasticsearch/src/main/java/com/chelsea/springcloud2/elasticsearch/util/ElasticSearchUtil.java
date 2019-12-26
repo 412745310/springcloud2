@@ -112,6 +112,7 @@ public class ElasticSearchUtil {
      * @throws IOException
      */
     public List<Map<String, Object>> search(String index, String field, Object value) throws IOException {
+        // 类包含关系  SearchRequest -> SearchSourceBuilder -> QueryBuilder
         SearchRequest searchRequest = new SearchRequest(index);
         SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
         sourceBuilder.query(QueryBuilders.matchQuery(field, value));
