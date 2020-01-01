@@ -53,5 +53,6 @@
 		<module>springcloud2-nacos</module>
 		<module>springcloud2-elasticsearch</module>
     <module>springcloud2-log4j</module>
+    <module>springcloud2-shiro</module>
   </modules>
 </project>
