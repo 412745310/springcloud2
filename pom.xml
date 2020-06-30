@@ -56,5 +56,6 @@
     <module>springcloud2-shiro</module>
     <module>springcloud2-admin-server</module>
     <module>springcloud2-admin-client</module>
+    <module>springcloud2-mybatisplus</module>
   </modules>
 </project>
