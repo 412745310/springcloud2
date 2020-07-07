@@ -85,6 +85,7 @@ public class ApprovalController {
             Map<String, Object> map = new HashMap<>();
             String businessKey = pi.getBusinessKey();
             String taskId = task.getId();
+            map.put("processId", task.getProcessInstanceId());
             map.put("taskId", taskId);
             map.put("businessKey", businessKey);
             list.add(map);
