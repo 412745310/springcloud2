@@ -74,7 +74,7 @@ public class ApprovalController {
      * @param group
      * @return
      */
-    @RequestMapping("/listByUser")
+    @RequestMapping("/listByUser") 
     public Object listByUser(String user) {
         List<Map<String, Object>> list = new ArrayList<>();
         List<Task> tasks = taskService.createTaskQuery().taskAssignee(user).list();
