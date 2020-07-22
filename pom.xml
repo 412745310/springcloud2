@@ -58,5 +58,6 @@
     <module>springcloud2-admin-client</module>
     <module>springcloud2-mybatisplus</module>
     <module>springcloud2-flowable</module>
+    <module>springcloud2-event</module>
   </modules>
 </project>
