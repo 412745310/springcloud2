@@ -2,8 +2,10 @@
 <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:flowable="http://flowable.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.flowable.org/processdef">
   <process id="test" name="测试" isExecutable="true">
     <startEvent id="startEvent1" flowable:formFieldValidation="true"></startEvent>
-    <userTask id="sid-0E8B853E-F084-4954-8880-8FC77B3DE2C2" name="审批人1" flowable:assignee="approval1" flowable:formFieldValidation="true">
+    <userTask id="sid-0E8B853E-F084-4954-8880-8FC77B3DE2C2" name="审批人1" flowable:candidateGroups="1" flowable:formFieldValidation="true">
       <extensionElements>
+        <modeler:group-info-name-1 xmlns:modeler="http://flowable.org/modeler"><![CDATA[组1]]></modeler:group-info-name-1>
+        <modeler:activiti-idm-candidate-group xmlns:modeler="http://flowable.org/modeler"><![CDATA[true]]></modeler:activiti-idm-candidate-group>
         <modeler:initiator-can-complete xmlns:modeler="http://flowable.org/modeler"><![CDATA[false]]></modeler:initiator-can-complete>
       </extensionElements>
     </userTask>
@@ -15,8 +17,10 @@
       <conditionExpression xsi:type="tFormalExpression"><![CDATA[${!approved}]]></conditionExpression>
     </sequenceFlow>
     <sequenceFlow id="sid-311053E1-6C79-41BA-B878-053D50B00EE5" sourceRef="sid-792C6AD0-8BA1-40B3-91B0-8A54041481C8" targetRef="sid-94C4EEDE-0957-4FB0-A09A-26E8C6909BFA"></sequenceFlow>
-    <userTask id="sid-792C6AD0-8BA1-40B3-91B0-8A54041481C8" name="操作人1" flowable:assignee="operator1" flowable:formFieldValidation="true">
+    <userTask id="sid-792C6AD0-8BA1-40B3-91B0-8A54041481C8" name="操作人1" flowable:candidateGroups="2" flowable:formFieldValidation="true">
       <extensionElements>
+        <modeler:group-info-name-2 xmlns:modeler="http://flowable.org/modeler"><![CDATA[组2]]></modeler:group-info-name-2>
+        <modeler:activiti-idm-candidate-group xmlns:modeler="http://flowable.org/modeler"><![CDATA[true]]></modeler:activiti-idm-candidate-group>
         <modeler:initiator-can-complete xmlns:modeler="http://flowable.org/modeler"><![CDATA[false]]></modeler:initiator-can-complete>
       </extensionElements>
     </userTask>
@@ -30,7 +34,7 @@
         <omgdc:Bounds height="30.0" width="30.0" x="100.0" y="163.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="sid-0E8B853E-F084-4954-8880-8FC77B3DE2C2" id="BPMNShape_sid-0E8B853E-F084-4954-8880-8FC77B3DE2C2">
-        <omgdc:Bounds height="80.0" width="100.0" x="221.0" y="130.0"></omgdc:Bounds>
+        <omgdc:Bounds height="80.0" width="100.0" x="221.0" y="210.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="sid-E466B246-6D0B-4F2E-A257-5C6D21031E4D" id="BPMNShape_sid-E466B246-6D0B-4F2E-A257-5C6D21031E4D">
         <omgdc:Bounds height="40.0" width="40.0" x="415.0" y="148.0"></omgdc:Bounds>
@@ -42,26 +46,26 @@
         <omgdc:Bounds height="80.0" width="100.0" x="585.0" y="128.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge bpmnElement="sid-B2F17C28-021A-4359-BF4C-40738A529105" id="BPMNEdge_sid-B2F17C28-021A-4359-BF4C-40738A529105">
-        <omgdi:waypoint x="129.93073153875804" y="177.23176066175478"></omgdi:waypoint>
-        <omgdi:waypoint x="220.99999999999991" y="172.56153846153848"></omgdi:waypoint>
+        <omgdi:waypoint x="128.57637099356532" y="184.26642934998785"></omgdi:waypoint>
+        <omgdi:waypoint x="220.99999999999997" y="226.9230769230769"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="sid-311053E1-6C79-41BA-B878-053D50B00EE5" id="BPMNEdge_sid-311053E1-6C79-41BA-B878-053D50B00EE5">
-        <omgdi:waypoint x="590.703125" y="207.95000000000002"></omgdi:waypoint>
-        <omgdi:waypoint x="457.55152641633435" y="298.1487043216308"></omgdi:waypoint>
+        <omgdi:waypoint x="585.0" y="204.4714285714286"></omgdi:waypoint>
+        <omgdi:waypoint x="457.267154988772" y="297.7437020457079"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="sid-6C3E8F32-11C2-483A-9233-91B4E38878CE" id="BPMNEdge_sid-6C3E8F32-11C2-483A-9233-91B4E38878CE">
-        <omgdi:waypoint x="320.9499999999997" y="169.390243902439"></omgdi:waypoint>
-        <omgdi:waypoint x="415.2409638554197" y="168.24036144578312"></omgdi:waypoint>
+        <omgdi:waypoint x="320.95000000000005" y="224.99999999999997"></omgdi:waypoint>
+        <omgdi:waypoint x="421.66666666666663" y="174.65"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="sid-5DC9DE11-AE09-4F26-87EF-71F9A5A556A5" id="BPMNEdge_sid-5DC9DE11-AE09-4F26-87EF-71F9A5A556A5">
-        <omgdi:waypoint x="436.84442567567567" y="186.10008440243084"></omgdi:waypoint>
-        <omgdi:waypoint x="444.93395962760997" y="292.0369360501665"></omgdi:waypoint>
+        <omgdi:waypoint x="436.4728187919463" y="186.47147887323945"></omgdi:waypoint>
+        <omgdi:waypoint x="444.8875194217965" y="292.04038504767266"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="sid-D59F2012-402B-4438-8E90-65FBD91EE0BA" id="BPMNEdge_sid-D59F2012-402B-4438-8E90-65FBD91EE0BA">
-        <omgdi:waypoint x="454.4388002363803" y="168.5"></omgdi:waypoint>
-        <omgdi:waypoint x="520.0" y="168.5"></omgdi:waypoint>
-        <omgdi:waypoint x="520.0" y="149.5"></omgdi:waypoint>
-        <omgdi:waypoint x="585.0" y="149.5"></omgdi:waypoint>
+        <omgdi:waypoint x="454.9382784958872" y="168.0"></omgdi:waypoint>
+        <omgdi:waypoint x="520.0" y="168.0"></omgdi:waypoint>
+        <omgdi:waypoint x="520.0" y="149.0"></omgdi:waypoint>
+        <omgdi:waypoint x="584.9999999999999" y="159.7391304347826"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

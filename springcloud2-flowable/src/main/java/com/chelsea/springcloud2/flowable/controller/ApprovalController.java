@@ -64,8 +64,21 @@ public class ApprovalController {
      */
     @RequestMapping("/listByGroup")
     public Object listByGroup(String group) {
+        List<Map<String, Object>> list = new ArrayList<>();
         List<Task> tasks = taskService.createTaskQuery().taskCandidateGroup(group).list();
-        return tasks.toString();
+        for (Task task : tasks) {
+            ProcessInstance pi =
+                    runtimeService.createProcessInstanceQuery().processInstanceId(task.getProcessInstanceId())
+                            .singleResult();
+            Map<String, Object> map = new HashMap<>();
+            String businessKey = pi.getBusinessKey();
+            String taskId = task.getId();
+            map.put("processId", task.getProcessInstanceId());
+            map.put("taskId", taskId);
+            map.put("businessKey", businessKey);
+            list.add(map);
+        }
+        return list.toString();
     }
     
     /**
@@ -74,7 +87,7 @@ public class ApprovalController {
      * @param group
      * @return
      */
-    @RequestMapping("/listByUser")
+    @RequestMapping("/listByUser") 
     public Object listByUser(String user) {
         List<Map<String, Object>> list = new ArrayList<>();
         List<Task> tasks = taskService.createTaskQuery().taskAssignee(user).list();
